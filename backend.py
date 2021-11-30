@@ -17,7 +17,7 @@ def create():
 
 @app.route("/games/<id>", methods=["GET"])
 def queryState(id):
-    global model 
+    global model
     model = games[id]
     model.step()
     listaRobots = []
@@ -34,4 +34,4 @@ def queryState(id):
             i = i - 1
     return jsonify({"Items":listaRobots})
 
-app.run()
+app.run(debug = True)
